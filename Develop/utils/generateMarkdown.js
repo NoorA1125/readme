@@ -26,6 +26,16 @@ function renderLicenseBadge(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  #Table of Contents
+  Description
+  Installation
+  Usage
+  Contributing
+  Test
+  License
+  Github
+  Email
+
   #Descrption
   ${data.description}
 

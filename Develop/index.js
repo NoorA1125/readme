@@ -2,12 +2,11 @@
 const inquirer = require("inquirer");
 const generatorMarkdown = require("./utils/generateMarkdown");
 const questions = require("./utils/prompt")
-const fs = require("fs");
+var fs = require("fs");
 
 function init() {
 questions();
 generatorMarkdown("Yes sirrr");
-
 }
 
 // Function call to initialize app

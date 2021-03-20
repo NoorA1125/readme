@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const generateMarkdown = require("./generateMarkdown");
 
 // TODO: Create an array of questions for user input
 function questions() {
@@ -58,9 +59,15 @@ function questions() {
 
         },
     ])
-        .then((response) => {
-            return fs.writeFileSync(path.json(process.cwd(), "README.md"), generate(response));
-        })
-};
-
+        // .then((response) => {
+        //     return fs.writeFileSync(path.json(process.cwd(), "README.md"), generate(response));
+        // })
+        .then((answers) => {
+            const htmlPageContent = generateMarkdown(answers);
+        
+            fs.writeFile('README.md', htmlPageContent, (err) =>
+              err ? console.log(err) : console.log('Successfully created README.md!')
+            );
+});
+}
 module.exports = questions;

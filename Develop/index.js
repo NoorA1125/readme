@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
-const questions = require("./prompt.js");
-const generatorMarkdown = require("./generateMarkdown");
+const inquirer = require("inquirer");
+const generatorMarkdown = require("./utils/generateMarkdown");
+const questions = require("./utils/prompt")
 const fs = require("fs");
 
 function init() {
